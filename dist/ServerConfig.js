@@ -45,6 +45,7 @@ __decorate([
     __metadata("design:type", Number)
 ], ServerConfig.prototype, "port", void 0);
 __decorate([
+    class_validator_1.IsOptional(),
     class_validator_1.IsInt(),
     class_validator_1.Min(2),
     class_validator_1.Max(os.cpus().length),

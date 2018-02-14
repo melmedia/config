@@ -1,7 +1,7 @@
 import * as os from 'os';
 import { injectable } from 'inversify';
 import { Config } from './Config';
-import { IsInt, IsNotEmpty, Max, Min } from 'class-validator';
+import { IsInt, IsNotEmpty, IsOptional, Max, Min } from 'class-validator';
 
 @injectable()
 export class ServerConfig extends Config {
@@ -14,6 +14,7 @@ export class ServerConfig extends Config {
   @Max(65536)
   public port!: number;
 
+  @IsOptional()
   @IsInt()
   @Min(2)
   @Max(os.cpus().length)
