@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, ValidateNested } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { Config } from './Config';
 
 export class LogCategoryConfig {
@@ -6,6 +6,7 @@ export class LogCategoryConfig {
   @IsString()
   public type!: 'file' | 'console';
 
+  @IsOptional()
   @IsString()
   public filename!: string;
 

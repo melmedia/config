@@ -27,6 +27,7 @@ __decorate([
     __metadata("design:type", String)
 ], LogCategoryConfig.prototype, "type", void 0);
 __decorate([
+    class_validator_1.IsOptional(),
     class_validator_1.IsString(),
     __metadata("design:type", String)
 ], LogCategoryConfig.prototype, "filename", void 0);

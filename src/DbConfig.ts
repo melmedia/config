@@ -1,5 +1,5 @@
 import { injectable } from 'inversify';
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { Config } from './Config';
 
 @injectable()
@@ -21,6 +21,7 @@ export class DbConfig extends Config {
   @IsString()
   public password!: string;
 
+  @IsOptional()
   @IsString()
   public logging!: string;
 
