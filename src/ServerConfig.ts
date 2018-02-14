@@ -19,13 +19,13 @@ export class ServerConfig extends Config {
   @Max(os.cpus().length)
   public workers!: number;
 
-  protected getName(): string {
-    return 'server';
+  public async validate() {
+    await super.validate();
+    super.validateIpOrHostname(this.host, 'host');
   }
 
-  protected async validate() {
-    super.validate();
-    super.validateIpOrHostname(this.host, 'host');
+  public getName(): string {
+    return 'server';
   }
 
 }

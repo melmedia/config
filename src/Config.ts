@@ -1,28 +1,22 @@
 import { injectable } from 'inversify';
 import { validate, Validator } from 'class-validator';
-import { ConfigSource } from './ConfigSource';
 
 @injectable()
 export abstract class Config {
 
-  constructor(configSource: ConfigSource) {
-    Object.assign(this, configSource.getConfig(this.getName(), this.defaultConfig));
-    this.validate();
-  }
-
-  protected abstract getName(): string;
-
-  protected get defaultConfig(): Object {
-    return {};
-  }
-
-  protected async validate() {
+  public async validate() {
     const errors = await validate(this);
     if (errors.length) {
       throw new Error(
         `Validation failed for config ${this.getName()}, errors: ${JSON.stringify(errors)}`,
       );
     }
+  }
+
+  public abstract getName(): string;
+
+  public getDefaults(): object {
+    return {};
   }
 
   protected validateIpOrHostname(value: string, propertyName: string) {

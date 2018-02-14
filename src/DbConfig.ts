@@ -3,7 +3,7 @@ import { IsNotEmpty, IsString } from 'class-validator';
 import { Config } from './Config';
 
 @injectable()
-export abstract class DbConfig extends Config {
+export class DbConfig extends Config {
   public type!: 'postgres';
 
   @IsNotEmpty()
@@ -21,26 +21,26 @@ export abstract class DbConfig extends Config {
   @IsString()
   public password!: string;
 
-  protected getName(): string {
+  @IsString()
+  public logging!: string;
+
+  public async validate() {
+    super.validate();
+    super.validateIpOrHostname(this.host, 'host');
+  }
+
+  public getName(): string {
     return 'db';
   }
 
-  protected get defaultConfig(): Object {
+  public getDefaults(): Object {
     return {
       type: 'postgres',
       logging: 'all',
-      migrations: this.getMigrationPaths(),
       cli: {
         migrationsDir: 'src/migrations',
       },
     };
-  }
-
-  protected abstract getMigrationPaths(): string[];
-
-  protected async validate() {
-    super.validate();
-    super.validateIpOrHostname(this.host, 'host');
   }
 
 }
