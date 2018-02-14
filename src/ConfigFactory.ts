@@ -1,7 +1,7 @@
 import { ConfigSource } from './ConfigSource';
 import { Config } from './Config';
 
-interface Newable<T> {
+export interface Newable<T> {
   new(...args: any[]): T;
 }
 
