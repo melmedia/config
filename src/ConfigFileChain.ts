@@ -1,4 +1,5 @@
 import { ConfigSource } from './ConfigSource';
+import * as deepExtend from 'deep-extend';
 
 export class ConfigFileChain implements ConfigSource {
   protected basePath: string;
@@ -10,7 +11,7 @@ export class ConfigFileChain implements ConfigSource {
   }
 
   public getConfig(name: string, defaults: object) {
-    return Object.assign(
+    return deepExtend(
       defaults,
       this.readConfigFile(`${this.basePath}/base/${name}.json`),
       this.readConfigFile(`${this.basePath}/base/${name}.js`),
