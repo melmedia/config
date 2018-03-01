@@ -2,19 +2,22 @@
   "name": "@c7s/config",
   "version": "0.0.1",
   "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "compile": "./node_modules/.bin/tsc"
+  },
   "dependencies": {
     "class-validator": "0.8.1",
+    "deep-extend": "0.5.0",
     "inversify": "4.10.0"
   },
   "devDependencies": {
+    "@types/deep-extend": "0.4.31",
     "@types/nconf": "0.0.37",
     "@types/node": "4.0.36",
     "tslint": "5.9.1",
-    "tslint-config-airbnb": "5.6.0",
+    "tslint-config-airbnb": "5.7.0",
     "typescript": "2.7.1"
-  },
-  "scripts": {
-    "compile": "./node_modules/.bin/tsc",
-    "compile-dev": "./node_modules/.bin/tsc --watch"
   }
 }
