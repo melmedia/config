@@ -8,6 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const class_transformer_1 = require("class-transformer");
 class ConfigFactory {
     constructor(configSource) {
         this.configSource = configSource;
@@ -15,7 +16,7 @@ class ConfigFactory {
     create(configConstructor) {
         return __awaiter(this, void 0, void 0, function* () {
             const config = new configConstructor;
-            Object.assign(config, this.configSource.getConfig(config.getName(), config.getDefaults()));
+            class_transformer_1.plainToClassFromExist(config, this.configSource.getConfig(config.getName(), config.getDefaults()));
             yield config.validate();
             return config;
         });
