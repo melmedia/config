@@ -11,15 +11,22 @@ export class ConfigFileChain implements ConfigSource {
   }
 
   public getConfig(name: string, defaults: object) {
-    return deepExtend(
-      defaults,
-      this.readConfigFile(`${this.basePath}/base/${name}.json`),
-      this.readConfigFile(`${this.basePath}/base/${name}.js`),
-      this.readConfigFile(`${this.basePath}/${this.environment}/${name}.json`),
-      this.readConfigFile(`${this.basePath}/${this.environment}/${name}.js`),
-      this.readConfigFile(`${this.basePath}/local/${name}.json`),
-      this.readConfigFile(`${this.basePath}/local/${name}.js`),
-    );
+    return deepExtend.apply(undefined, [defaults].concat(
+      this.getConfigFileChain(name).map(
+        configFilePath => this.readConfigFile(configFilePath),
+      ),
+    ));
+  }
+
+  protected getConfigFileChain(name: string) {
+    return [
+      `${this.basePath}/base/${name}.json`,
+      `${this.basePath}/base/${name}.js`,
+      `${this.basePath}/${this.environment}/${name}.json`,
+      `${this.basePath}/${this.environment}/${name}.js`,
+      `${this.basePath}/local/${name}.json`,
+      `${this.basePath}/local/${name}.js`,
+    ];
   }
 
   protected readConfigFile(configPath: string) {
