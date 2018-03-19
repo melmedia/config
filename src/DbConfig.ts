@@ -1,5 +1,5 @@
 import { injectable } from 'inversify';
-import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { IsNotEmpty, IsString } from 'class-validator';
 import { Config } from './Config';
 
 @injectable()
@@ -20,10 +20,6 @@ export class DbConfig extends Config {
   @IsNotEmpty()
   @IsString()
   public password!: string;
-
-  @IsOptional()
-  @IsString()
-  public logging!: string;
 
   public async validate() {
     super.validate();

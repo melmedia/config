@@ -8,16 +8,17 @@
     "compile": "./node_modules/.bin/tsc"
   },
   "dependencies": {
+    "class-transformer": "0.1.9",
     "class-validator": "0.8.1",
     "deep-extend": "0.5.0",
-    "inversify": "4.10.0"
+    "inversify": "4.11.1"
   },
   "devDependencies": {
     "@types/deep-extend": "0.4.31",
     "@types/nconf": "0.0.37",
-    "@types/node": "4.0.36",
+    "@types/node": "8.0.46",
     "tslint": "5.9.1",
     "tslint-config-airbnb": "5.7.0",
-    "typescript": "2.7.1"
+    "typescript": "2.7.2"
   }
 }

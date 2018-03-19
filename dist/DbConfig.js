@@ -60,11 +60,6 @@ __decorate([
     class_validator_1.IsString(),
     __metadata("design:type", String)
 ], DbConfig.prototype, "password", void 0);
-__decorate([
-    class_validator_1.IsOptional(),
-    class_validator_1.IsString(),
-    __metadata("design:type", String)
-], DbConfig.prototype, "logging", void 0);
 DbConfig = __decorate([
     inversify_1.injectable()
 ], DbConfig);

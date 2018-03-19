@@ -1,3 +1,4 @@
+import { plainToClassFromExist } from 'class-transformer';
 import { ConfigSource } from './ConfigSource';
 import { Config } from './Config';
 
@@ -14,7 +15,7 @@ export class ConfigFactory {
 
   public async create<T extends Config>(configConstructor: Newable<T>): Promise<T> {
     const config = new configConstructor;
-    Object.assign(
+    plainToClassFromExist(
       config,
       this.configSource.getConfig(config.getName(), config.getDefaults()),
     );

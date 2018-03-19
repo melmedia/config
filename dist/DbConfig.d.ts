@@ -5,7 +5,6 @@ export declare class DbConfig extends Config {
     database: string;
     username: string;
     password: string;
-    logging: string;
     validate(): Promise<void>;
     getName(): string;
     getDefaults(): Object;
