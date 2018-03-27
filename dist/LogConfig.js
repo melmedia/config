@@ -19,11 +19,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const class_validator_1 = require("class-validator");
 const Config_1 = require("./Config");
+var LogType;
+(function (LogType) {
+    LogType["file"] = "file";
+    LogType["dateFile"] = "dateFile";
+    LogType["console"] = "console";
+})(LogType = exports.LogType || (exports.LogType = {}));
 class LogCategoryConfig {
 }
 __decorate([
     class_validator_1.IsNotEmpty(),
     class_validator_1.IsString(),
+    class_validator_1.IsEnum(LogType),
     __metadata("design:type", String)
 ], LogCategoryConfig.prototype, "type", void 0);
 __decorate([

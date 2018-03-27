@@ -1,10 +1,17 @@
-import { IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
+import { IsEnum, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { Config } from './Config';
+
+export enum LogType {
+  file = 'file',
+  dateFile = 'dateFile',
+  console = 'console',
+}
 
 export class LogCategoryConfig {
   @IsNotEmpty()
   @IsString()
-  public type!: 'file' | 'console';
+  @IsEnum(LogType)
+  public type!: LogType;
 
   @IsOptional()
   @IsString()

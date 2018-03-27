@@ -1,6 +1,11 @@
 import { Config } from './Config';
+export declare enum LogType {
+    file = "file",
+    dateFile = "dateFile",
+    console = "console",
+}
 export declare class LogCategoryConfig {
-    type: 'file' | 'console';
+    type: LogType;
     filename: string;
     level: string;
 }
