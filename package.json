@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "class-transformer": "0.1.9",
-    "class-validator": "0.8.1",
+    "class-validator": "^0.8.1",
     "deep-extend": "0.5.0",
     "inversify": "4.11.1"
   },
