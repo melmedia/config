@@ -11,7 +11,7 @@
     "class-transformer": "0.1.9",
     "class-validator": "^0.8.1",
     "deep-extend": "0.5.0",
-    "inversify": "4.11.1"
+    "inversify": "4.13.0"
   },
   "devDependencies": {
     "@types/deep-extend": "0.4.31",
@@ -19,6 +19,6 @@
     "@types/node": "8.0.46",
     "tslint": "5.9.1",
     "tslint-config-airbnb": "5.8.0",
-    "typescript": "2.8.1"
+    "typescript": "2.8.3"
   }
 }
