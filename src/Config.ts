@@ -21,7 +21,7 @@ export abstract class Config {
 
   protected validateIpOrHostname(value: string, propertyName: string) {
     const validator = new Validator;
-    if (!(validator.isIP(value) || validator.isFQDN(value))) {
+    if (!(validator.isIP(value) || validator.isFQDN(value, { require_tld: false }))) {
       throw new Error(`Config ${this.getName()}: ${propertyName} must be IP or hostname`);
     }
   }
