@@ -20,7 +20,7 @@ let Config = class Config {
     }
     validateIpOrHostname(value, propertyName) {
         const validator = new class_validator_1.Validator;
-        if (!(validator.isIP(value) || validator.isFQDN(value))) {
+        if (!(validator.isIP(value) || validator.isFQDN(value, { require_tld: false }))) {
             throw new Error(`Config ${this.getName()}: ${propertyName} must be IP or hostname`);
         }
     }
