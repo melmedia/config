@@ -10,15 +10,15 @@
   "dependencies": {
     "class-transformer": "0.1.9",
     "class-validator": "^0.8.1",
-    "deep-extend": "0.5.0",
+    "deep-extend": "0.6.0",
     "inversify": "4.13.0"
   },
   "devDependencies": {
     "@types/deep-extend": "0.4.31",
     "@types/nconf": "0.0.37",
     "@types/node": "8.0.46",
-    "tslint": "5.9.1",
-    "tslint-config-airbnb": "5.8.0",
-    "typescript": "2.8.3"
+    "tslint": "5.11.0",
+    "tslint-config-airbnb": "5.9.2",
+    "typescript": "2.9.2"
   }
 }
