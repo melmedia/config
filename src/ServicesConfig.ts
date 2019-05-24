@@ -14,7 +14,7 @@ export class ServicesConfig extends Config {
         continue;
       }
 
-      if (!validator.isURL(this[service] as string)) {
+      if (!validator.isURL(this[service] as string, { require_tld: false })) {
         throw new Error(`Config ${this.getName()}: ${service} value must be URL`);
       }
     }

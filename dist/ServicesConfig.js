@@ -17,7 +17,7 @@ let ServicesConfig = class ServicesConfig extends Config_1.Config {
             if ('function' === typeof service) {
                 continue;
             }
-            if (!validator.isURL(this[service])) {
+            if (!validator.isURL(this[service], { require_tld: false })) {
                 throw new Error(`Config ${this.getName()}: ${service} value must be URL`);
             }
         }
