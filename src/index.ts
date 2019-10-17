@@ -8,7 +8,6 @@ import { RedisConfig } from './RedisConfig';
 import { LogConfig, LogCategoryConfig } from './LogConfig';
 import { ServicesConfig } from './ServicesConfig';
 
-
 export {
   ConfigFileChain,
   ConfigSource,

@@ -5,20 +5,21 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "./node_modules/.bin/tsc"
+    "build": "tsc",
+    "tslint": "tslint --project ."
   },
   "dependencies": {
     "class-transformer": "0.1.9",
     "class-validator": "^0.8.1",
     "deep-extend": "0.6.0",
-    "inversify": "4.13.0"
+    "inversify": "5.0.1"
   },
   "devDependencies": {
     "@types/deep-extend": "0.4.31",
-    "@types/nconf": "0.0.37",
+    "@types/nconf": "0.10.0",
     "@types/node": "8.0.46",
-    "tslint": "5.11.0",
-    "tslint-config-airbnb": "5.9.2",
-    "typescript": "2.9.2"
+    "tslint": "5.12.1",
+    "tslint-config-airbnb": "5.11.1",
+    "typescript": "3.2.4"
   }
 }

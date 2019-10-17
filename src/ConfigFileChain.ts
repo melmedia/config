@@ -15,7 +15,7 @@ export class ConfigFileChain implements ConfigSource {
       this.getConfigFileChain(name).map(
         configFilePath => this.readConfigFile(configFilePath),
       ),
-    ));
+    ) as any);
   }
 
   protected getConfigFileChain(name: string) {
